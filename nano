@@ -1,0 +1,12 @@
+# 🍎 Kleopatra for macOS — KDE 6 Version
+
+Welcome to the **Homebrew Tap for Kleopatra v24**, the modern KDE 6-based version of Gpg4win's certificate manager and OpenPGP frontend — now available for macOS!
+
+This tap makes it easy to install the latest KDE 6 version of Kleopatra via Homebrew.
+
+## 🔧 Installation
+
+First, tap the repository:
+
+```bash
+brew tap theapplegates/kleopatra-mac-v24
