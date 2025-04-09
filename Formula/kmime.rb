@@ -8,7 +8,7 @@ class Kmime < Formula
   depends_on "cmake" => :build
   depends_on "extra-cmake-modules" => :build
   depends_on "ninja" => :build
-depends_on "theapplegates/kleopatra-mac-v24/kf6-codecs"
+
   depends_on "theapplegates/kleopatra-mac-v24/kf6-codecs"
   depends_on "theapplegates/kleopatra-mac-v24/kf6-ki18n"
 
