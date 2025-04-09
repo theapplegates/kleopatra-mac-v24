@@ -106,7 +106,7 @@ sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
   # PIM components
   resource "kmime" do
     url "https://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
-    sha256 "1d7c5607a4ec1ea10e287db0f2cb28f18b080f3f51ffd2a896ab3f41aa66bd65"
+    sha256 "86f0cf9b71ed27f1dfea607cf150b157470a10811231b17c6180edfd575b7f7f"
   end
 
   resource "libkleo" do
