@@ -1,7 +1,7 @@
 class Kmime < Formula
   desc "KDE library for handling MIME types"
   homepage "https://invent.kde.org/libraries/kmime"
-  url "http://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
+  url "https://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
   sha256 "4f1251484f18b6eedf62c9219a504e6357de5adff4016cc34a714dd0cb748065"
   license "LGPL-2.1-only"
 
