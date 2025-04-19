@@ -148,7 +148,15 @@ class KleopatraKf6 < Formula
     args << "-DCMAKE_PREFIX_PATH=#{Formula["qt@6"].opt_prefix}"
     args << "-DREQ_KF6_VERSION=6.0.0"
 
- 
+    # Build gpgme with Qt6 support
+  ENV.prepend_path "PATH", Formula["qt"].opt_bin
+  ENV.prepend_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+     qt = Formula["qt"]
+    ENV.prepend_path  "PATH",            qt.opt_bin
+    ENV.prepend_path  "PKG_CONFIG_PATH", qt.opt_lib/"pkgconfig"
+    ENV.prepend       "CPPFLAGS",        "-I#{qt.opt_include}"
+    ENV.prepend       "LDFLAGS",         "-F#{qt.opt_prefix}/Frameworks"
+
 
     resource("gpgme-qt6").stage do
       system "./configure", "--disable-dependency-tracking",
