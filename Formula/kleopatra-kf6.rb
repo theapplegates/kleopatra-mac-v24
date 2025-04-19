@@ -111,7 +111,7 @@ end
 
   resource "libkleo" do
     url "https://download.kde.org/stable/release-service/24.02.0/src/libkleo-24.02.0.tar.xz"
-    sha256 "535f3b2a6cbf25533212a4bb6e23d0d5008e609cf7c17f664146ad3aa847d845"
+    sha256 "ade428daca544798314a3a5b577efe8417c6d2182f74e427f3d7c79c3ca1b96c"
   end
 
   resource "mimetreeparser" do
