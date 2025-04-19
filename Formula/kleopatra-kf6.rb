@@ -125,15 +125,22 @@ class KleopatraKf6 < Formula
     sha256 "9499e8b1f33cccb6815527a1bc16049d35a6198a6c5fae0185f2bd561bce5224"
   end
 
-  def install
-    # Force PIC support so the gpgme‑qt6 configure test on macOS passes
-    ENV.append "CXXFLAGS", "-fPIC"
-    ENV["ac_cv_cxx_compile_pic"] = "yes"
-      ENV.prepend_path  "PATH",            qt.opt_bin
-    ENV.prepend_path  "PKG_CONFIG_PATH", qt.opt_lib/"pkgconfig"
-    ENV.prepend       "CPPFLAGS",        "-I#{qt.opt_include}"
-    ENV.prepend       "LDFLAGS",         "-F#{qt.opt_prefix}/Frameworks"
+ def install
+  # Force PIC support so the gpgme‑qt6 PIC check passes
+  ENV.append "CXXFLAGS", "-fPIC"
+  ENV["ac_cv_cxx_compile_pic"] = "yes"
 
+   # Expose Qt6 to the build
+     ENV.prepend_path  "PATH",            Formula["qt"].opt_bin
+     ENV.prepend_path  "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+     ENV.prepend       "CPPFLAGS",        "-I#{Formula["qt"].opt_include}"
+     ENV.prepend       "LDFLAGS",         "-F#{Formula["qt"].opt_prefix}/Frameworks"
+  
+      # …rest of your install steps…
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+    end
   ENV.append "CXXFLAGS", "-fPIC"
   ENV["ac_cv_cxx_compile_pic"] = "yes"
     args = std_cmake_args
