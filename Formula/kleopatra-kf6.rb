@@ -5,7 +5,7 @@ class KleopatraKf6 < Formula
   sha256 "20af58ab639ea99df09acbd74af0c867f22f1d9f91595623ab44fba5834eaa62"
   head "https://invent.kde.org/pim/kleopatra.git", branch: "master"
   license all_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
-  
+
   # Make it keg-only to prevent conflicts with other kde/gpgme libs
   keg_only "not linked to prevent conflicts with any gpgme or kde libs"
 
@@ -57,26 +57,25 @@ class KleopatraKf6 < Formula
     sha256 "a7771c92310a21a8105ba64dd61c065ba74723899c7ccfc4de2b57b17e6a6b63"
   end
 
-resource "kwindowsystem" do
-  url "https://download.kde.org/stable/frameworks/6.0/kwindowsystem-6.0.0.tar.xz"
-  sha256 "1906caa53b7d58fc0c4d78a3c8d99f25aa056fc6d09c5fc121ed5e1f80396a94"
-end
+  resource "kf6-kwindowsystem" do
+    url "https://download.kde.org/stable/frameworks/6.0/kwindowsystem-6.0.0.tar.xz"
+    sha256 "1906caa53b7d58fc0c4d78a3c8d99f25aa056fc6d09c5fc121ed5e1f80396a94"
+  end
 
-resource "kcrash" do
-  url "https://download.kde.org/stable/frameworks/6.0/kcrash-6.0.0.tar.xz"
-  sha256 "f56f1ed44e494417b7046e4f94791ad4ddd07c6cb8f0f704f2053717a44296f9"
-end
+  resource "kf6-kcrash" do
+    url "https://download.kde.org/stable/frameworks/6.0/kcrash-6.0.0.tar.xz"
+    sha256 "f56f1ed44e494417b7046e4f94791ad4ddd07c6cb8f0f704f2053717a44296f9"
+  end
 
   resource "kf6-kitemmodels" do
     url "https://download.kde.org/stable/frameworks/6.0/kitemmodels-6.0.0.tar.xz"
     sha256 "89b879981722821a911bba1765128820217944fa78e5452369158ed97a835b3a"
   end
 
-resource "kiconthemes" do
-  url "https://download.kde.org/stable/frameworks/6.0/kiconthemes-6.0.0.tar.xz"
+  resource "kf6-kiconthemes" do
+    url "https://download.kde.org/stable/frameworks/6.0/kiconthemes-6.0.0.tar.xz"
     sha256 "f557bd269fafe617eb8d4b7ac2959609f96cce3ea8b1b3ac231063a726927bb0"
-end
-
+  end
 
   resource "kf6-kconfigwidgets" do
     url "https://download.kde.org/stable/frameworks/6.0/kconfigwidgets-6.0.0.tar.xz"
@@ -88,14 +87,14 @@ end
     sha256 "b426176d2cbc6fe80c758b6c476a47341d89a92cbb3355c2be37428a41772907"
   end
 
-resource "kio" do
-  url "https://download.kde.org/stable/frameworks/6.0/kio-6.0.0.tar.xz"
-  sha256 "4951adf043299e463803cc63ed33d5261b81bff969eb189dc13350f495cb4b42"
-end
+  resource "kf6-kio" do
+    url "https://download.kde.org/stable/frameworks/6.0/kio-6.0.0.tar.xz"
+    sha256 "4951adf043299e463803cc63ed33d5261b81bff969eb189dc13350f495cb4b42"
+  end
 
   resource "kf6-kxmlgui" do
-url "https://download.kde.org/stable/frameworks/6.0/kxmlgui-6.0.0.tar.xz"
-sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
+    url "https://download.kde.org/stable/frameworks/6.0/kxmlgui-6.0.0.tar.xz"
+    sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
   end
 
   resource "kf6-kcmutils" do
@@ -105,8 +104,8 @@ sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
 
   # kmime
   resource "kmime" do
-  url "https://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
-  sha256 "4f1251484f18b6eedf62c9219a504e6357de5adff4016cc34a714dd0cb748065"
+    url "https://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
+    sha256 "4f1251484f18b6eedf62c9219a504e6357de5adff4016cc34a714dd0cb748065"
   end
 
   resource "libkleo" do
@@ -116,11 +115,11 @@ sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
 
   resource "mimetreeparser" do
     url "https://download.kde.org/stable/release-service/24.02.0/src/mimetreeparser-24.02.0.tar.xz"
-    sha256 "sha256 "5d0546c49e8fd5d639ba68ae0a790260aae5e1d068737587f2bdc5c110ff97ef"
+    sha256 "5d0546c49e8fd5d639ba68ae0a790260aae5e1d068737587f2bdc5c110ff97ef"
   end
 
   # qgpgme
-resource "gpgme-qt6" do
+  resource "gpgme-qt6" do
     url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.23.2.tar.bz2"
     sha256 "9499e8b1f33cccb6815527a1bc16049d35a6198a6c5fae0185f2bd561bce5224"
   end
@@ -143,8 +142,8 @@ resource "gpgme-qt6" do
     end
 
     # Build KF6 components
-    %w[kf6-kcoreaddons kf6-kconfig kf6-kcodecs kf6-kguiaddons kf6-ki18n 
-       kf6-kwidgetsaddons kf6-kwindowsystem kf6-kcrash kf6-kitemmodels 
+    %w[kf6-kcoreaddons kf6-kconfig kf6-kcodecs kf6-kguiaddons kf6-ki18n
+       kf6-kwidgetsaddons kf6-kwindowsystem kf6-kcrash kf6-kitemmodels
        kf6-kiconthemes kf6-kconfigwidgets kf6-kstatusnotifieritem
        kf6-kio kf6-kxmlgui kf6-kcmutils].each do |kf6_component|
       resource(kf6_component).stage do
@@ -152,7 +151,7 @@ resource "gpgme-qt6" do
         kf6_args << "-DBUILD_QCH=ON"
         kf6_args << "-DBUILD_WITH_QT6=ON"
         kf6_args << "-DCMAKE_PREFIX_PATH=#{Formula["qt@6"].opt_prefix}"
-        
+
         system "cmake", ".", *kf6_args
         system "make", "install"
       end
@@ -165,7 +164,7 @@ resource "gpgme-qt6" do
         pim_args << "-DBUILD_QCH=ON"
         pim_args << "-DBUILD_WITH_QT6=ON"
         pim_args << "-DCMAKE_PREFIX_PATH=#{Formula["qt@6"].opt_prefix}"
-        
+
         system "cmake", ".", *pim_args
         system "make", "install"
       end
