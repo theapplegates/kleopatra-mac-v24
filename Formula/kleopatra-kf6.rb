@@ -103,11 +103,9 @@ sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
     sha256 "9b09b140c013d568a2ee357f824bfb64145e4dfdd1689da6fbfb4f418c5ba43b"
   end
 
-  # PIM components
-    resource "kmime" do
+  # kmime
   url "https://download.kde.org/stable/release-service/24.02.0/src/kmime-24.02.0.tar.xz"
   sha256 "4f1251484f18b6eedf62c9219a504e6357de5adff4016cc34a714dd0cb748065"
-  end
 
   resource "libkleo" do
     url "https://download.kde.org/stable/release-service/24.02.0/src/libkleo-24.02.0.tar.xz"
@@ -120,11 +118,10 @@ sha256 "d26c62ce9f5be8643fed465531418fb67e4d13edf61797a946da301aeb9158f2"
   end
 
   # qgpgme
-  resource "gpgme-qt6" do
+resource "gpgme-qt6" do
     url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-1.23.2.tar.bz2"
     sha256 "9499e8b1f33cccb6815527a1bc16049d35a6198a6c5fae0185f2bd561bce5224"
   end
-
   def install
     args = std_cmake_args
     args << "-DBUILD_QCH=ON"
