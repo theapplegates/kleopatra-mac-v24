@@ -116,7 +116,7 @@ end
 
   resource "mimetreeparser" do
     url "https://download.kde.org/stable/release-service/24.02.0/src/mimetreeparser-24.02.0.tar.xz"
-    sha256 "84e77f4ff5910b6bec58c7fc47afbaf8cf88f3ec318b51cac0dfe8d4c1a89bb7"
+    sha256 "sha256 "5d0546c49e8fd5d639ba68ae0a790260aae5e1d068737587f2bdc5c110ff97ef"
   end
 
   # qgpgme
