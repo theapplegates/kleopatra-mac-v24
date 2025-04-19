@@ -2,7 +2,7 @@ class KleopatraKf6 < Formula
   desc "Certificate Manager and GUI for OpenPGP and CMS cryptography"
   homepage "https://apps.kde.org/kleopatra/"
   url "https://download.kde.org/stable/release-service/24.02.0/src/kleopatra-24.02.0.tar.xz"
-  sha256 "20af58ab639ea99df09acbd74af0c867f22f1d9f91595623ab44fba5834eaa62"
+  sha256 "b91486f40084d886824339301df038df84632a3d81b9254d87734240dcd99838"
   head "https://invent.kde.org/pim/kleopatra.git", branch: "master"
   license all_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
 
