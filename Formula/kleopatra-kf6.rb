@@ -25,6 +25,7 @@ class KleopatraKf6 < Formula
   depends_on "libassuan"
   depends_on "libgpg-error"
   depends_on "qt@6"
+  depends_on "qt"
 
   # KF6 dependencies
   resource "kf6-kcoreaddons" do
