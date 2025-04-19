@@ -129,18 +129,17 @@ class KleopatraKf6 < Formula
   # Force PIC support so the gpgme‑qt6 PIC check passes
   ENV.append "CXXFLAGS", "-fPIC"
   ENV["ac_cv_cxx_compile_pic"] = "yes"
+  ENV.prepend_path  "PATH",            Formula["qt"].opt_bin
+  ENV.prepend_path  "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+  ENV.prepend       "CPPFLAGS",        "-I#{Formula["qt"].opt_include}"
+  ENV.prepend       "LDFLAGS",         "-F#{Formula["qt"].opt_prefix}/Frameworks"
 
    # Expose Qt6 to the build
-     ENV.prepend_path  "PATH",            Formula["qt"].opt_bin
-     ENV.prepend_path  "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-     ENV.prepend       "CPPFLAGS",        "-I#{Formula["qt"].opt_include}"
-     ENV.prepend       "LDFLAGS",         "-F#{Formula["qt"].opt_prefix}/Frameworks"
-  
       # …rest of your install steps…
       system "cmake", "-S", ".", "-B", "build", *std_cmake_args
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
-    end
+  
   ENV.append "CXXFLAGS", "-fPIC"
   ENV["ac_cv_cxx_compile_pic"] = "yes"
     args = std_cmake_args
@@ -149,15 +148,7 @@ class KleopatraKf6 < Formula
     args << "-DCMAKE_PREFIX_PATH=#{Formula["qt@6"].opt_prefix}"
     args << "-DREQ_KF6_VERSION=6.0.0"
 
-    # Build gpgme with Qt6 support
-  ENV.prepend_path "PATH", Formula["qt"].opt_bin
-  ENV.prepend_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
-     qt = Formula["qt"]
-    ENV.prepend_path  "PATH",            qt.opt_bin
-    ENV.prepend_path  "PKG_CONFIG_PATH", qt.opt_lib/"pkgconfig"
-    ENV.prepend       "CPPFLAGS",        "-I#{qt.opt_include}"
-    ENV.prepend       "LDFLAGS",         "-F#{qt.opt_prefix}/Frameworks"
-
+ 
 
     resource("gpgme-qt6").stage do
       system "./configure", "--disable-dependency-tracking",
