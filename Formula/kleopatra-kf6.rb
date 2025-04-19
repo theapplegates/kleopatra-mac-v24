@@ -126,6 +126,9 @@ class KleopatraKf6 < Formula
   end
 
   def install
+    # Force PIC support so the gpgme‑qt6 configure test on macOS passes
+  ENV.append "CXXFLAGS", "-fPIC"
+  ENV["ac_cv_cxx_compile_pic"] = "yes"
     args = std_cmake_args
     args << "-DBUILD_QCH=ON"
     args << "-DBUILD_WITH_QT6=ON"
@@ -133,6 +136,9 @@ class KleopatraKf6 < Formula
     args << "-DREQ_KF6_VERSION=6.0.0"
 
     # Build gpgme with Qt6 support
+  ENV.prepend_path "PATH", Formula["qt"].opt_bin
+  ENV.prepend_path "PKG_CONFIG_PATH", Formula["qt"].opt_lib/"pkgconfig"
+
     resource("gpgme-qt6").stage do
       system "./configure", "--disable-dependency-tracking",
                             "--disable-silent-rules",
