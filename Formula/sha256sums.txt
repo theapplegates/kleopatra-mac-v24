@@ -1,0 +1,13 @@
+kcodecs                   6e5852954a9e83750e346f8603e8146010cdc8d7d544a5e5d5eb46d93c94a911
+kconfig                   03d1d09054d646c67fcaa9f1fa53157811ad07ef40a38b9f4e0b52ae3173b1bf
+kcoreaddons               7b37e8d4e185bcdd8bfd166c739f7adbcb0730cdf140d64a308f7b96b1845736
+kcrash                    c0b96110d25faa35587ac4af30cd1e3a8012133fcac12276e8b25977cd9b84a4
+ki18n                     cd1adbcde1badfb7ac8945c3c0a9afc02b2ed642c769d74e1bcb70a02d070dc5
+kiconthemes               54b1b5f2839162d980873328716b30cf08f90fd079ad854cc09878ad9b376ecf
+kitemmodels               62688311082b6aca226117810bc3991b0cb95158dec4d4c800d70a99bdcfdfc8
+kcmutils                  7aacd2f06f0f393631fc058188b92ad55929871e93aa2ea3de2a9d0b35a36ac7
+kio                       1581e4f885750f08a3134fad47b81e953556e3fc94028939b47ffae0ab432eee
+kwidgetsaddons            02ce60ac8ba2e717180715f7fb70b024d30c436f82fab6ce1a544696a9f0c1cd
+kwindowsystem             6e7f0ea1bd5b1b0f81f785ff0fddeb943222382f1c11b5201f69b6c62763b6f6
+kxmlgui                   3c30a44e3d5176de36af56b6c29d86413fd58c6386679c6222aa4d0b46d0d88c
+kstatusnotifieritem       5b0e7b20492dbd9d5742bbafd6f8577dc682480a615e1965f3c53741e684fc3d

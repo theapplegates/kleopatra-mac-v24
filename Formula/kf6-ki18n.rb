@@ -1,14 +1,10 @@
 class Kf6Ki18n < Formula
-  desc "KF6 Internationalization framework"
-  homepage "https://api.kde.org/frameworks/ki18n/html/index.html"
-  url "https://download.kde.org/stable/release-service/24.02.0/src/ki18n-24.02.0.tar.xz"
-  sha256 "6f0dc9202362b5a42d6e8be98f0df8c151f7c27936d5b3a20550cb6f5a3b6a4a"
-  license "LGPL-2.0-only"
-
-  depends_on "cmake" => :build
-  depends_on "gettext"
-  depends_on "qt@6"
-
+  desc "KDE Frameworks 6 – Ki18n"
+  url  "https://download.kde.org/stable/frameworks/6.13/ki18n-6.13.0.tar.xz"
+  sha256 "cd1adbcde1badfb7ac8945c3c0a9afc02b2ed642c769d74e1bcb70a02d070dc5"
+  license "LGPL-2.0-or-later"
+  depends_on "qt6"
+  depends_on "extra-cmake-modules" => :build
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
